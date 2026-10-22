@@ -2,6 +2,14 @@
 
 Aero is a privacy-focused Android browser built with Kotlin, Jetpack Compose, the latest stable Material 3, and Android WebView. It supports Android 8.0+ (API 26), adapts its browser chrome to compact and larger window widths, compiles against API 37, and currently targets API 35.
 
+## Screenshots
+
+| | |
+| --- | --- |
+| ![Browser home (light)](docs/images/browser-home.png) <br> **Browsing** — DuckDuckGo as the default homepage | ![Browser home (dark)](docs/images/browser-home-dark.png) <br> **Dark theme** |
+| ![Tab overview](docs/images/tab-overview.png) <br> **Tab overview** — normal and private tabs with search | ![Settings](docs/images/settings.png) <br> **Settings** — privacy and security controls |
+| ![Secure DNS](docs/images/secure-dns.png) <br> **Secure DNS** — DoH resolver inside Aero only | |
+
 ## Project overview
 
 The app includes multi-tab browsing, private tabs, a tab overview, bookmarks, history, downloads, configurable search and homepage, HTTPS-only mode, tracking protection, browser-scoped DNS over HTTPS, theme/dynamic color settings, HTTP(S) link handling, and shared-URL intents. On wider windows it uses a vertical tab/navigation rail. It also provides offline retry and renderer recovery screens.
@@ -42,19 +50,16 @@ the current build with `adb install -r app\build\outputs\apk\debug\AeroMobile.ap
 
 ### Free space without deleting project files
 
-Preview the reusable cleanup included with the build kit:
+Gradle build outputs and caches are regenerable and safe to delete:
 
 ```bash
-node Aero/scripts/clean-build-kit.cjs --dry-run
+./gradlew clean
 ```
 
-Run it without `--dry-run` to remove regenerable Android and desktop build
-outputs, Gradle caches, unpacked installers, and the generated bug-report
-extract and installed desktop npm dependencies (reinstall with `npm --prefix
-Aero ci` before building the desktop app). It preserves source, Git history,
-the Android debug APK when present, the desktop `AeroData` browser profile,
-and an emulator PID marker. Build outputs and local caches can be recreated
-with the commands below.
+This removes `app/build/` and the root `build/` directory. It never touches
+source files, Git history, or `local.properties`. The Gradle caches under
+`~/.gradle/` can also be deleted if you need to reclaim disk space; the next
+build re-downloads what it needs.
 
 ### Release APK and Play Store bundle
 
@@ -143,3 +148,14 @@ The app does not request `POST_NOTIFICATIONS`; download notifications are shown 
 ```
 
 Device testing is still recommended for actual downloads, window resizing/folding, external link resolution, and offline/renderer failure recovery.
+
+## Release notes
+
+See [RELEASES.md](RELEASES.md) for the changelog of every published version.
+The desktop counterpart of this browser lives at
+[ashkanr65/Aero](https://github.com/ashkanr65/Aero); the Android port design
+notes are in [docs/ANDROID_PORT_ANALYSIS.md](docs/ANDROID_PORT_ANALYSIS.md).
+
+## License
+
+MIT License — see [LICENSE](LICENSE).

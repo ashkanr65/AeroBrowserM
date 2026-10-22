@@ -1,4 +1,5 @@
 # Build outputs
+/build/
 app/build/
 app/.gradle/
 *.apk
@@ -6,7 +7,15 @@ app/.gradle/
 
 # Gradle
 .gradle/
-gradle/wrapper/gradle-wrapper.jar
+# NOTE: gradle/wrapper/gradle-wrapper.jar is intentionally committed so
+# ./gradlew works on a fresh clone without a preinstalled Gradle.
+
+# Machine-local configuration (contains a local Android SDK path)
+local.properties
+
+# Signing material - never commit
+*.jks
+*.keystore
 
 # IDE
 *.iml
@@ -17,13 +26,23 @@ gradle/wrapper/gradle-wrapper.jar
 .DS_Store
 Thumbs.db
 
-# Screenshots (large files)
-screenshots/*.png
+# Working screenshots (large); curated images live in docs/images/
+screenshots/
 
-# SDK files
+# Loose dev screenshots at the repo root
+/*.png
+
+# Freebuff workspace metadata
+.freebuff/
+
+# One-off environment probe scripts
 sdk_*.log
 sdk_*.py
 sdk_*.ps1
+probesh.bat
+registry_probe.ps1
+shell_probe.ps1
+ws_sdk_*.ps1
 
 # Environment files
 .env*
