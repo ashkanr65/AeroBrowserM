@@ -1,0 +1,29 @@
+# Build outputs
+app/build/
+app/.gradle/
+*.apk
+*.aar
+
+# Gradle
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+*.iml
+/.idea/
+/.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Screenshots (large files)
+screenshots/*.png
+
+# SDK files
+sdk_*.log
+sdk_*.py
+sdk_*.ps1
+
+# Environment files
+.env*
