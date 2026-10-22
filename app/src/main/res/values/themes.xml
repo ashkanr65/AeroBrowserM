@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base theme; real colors come from Compose Material 3 at runtime. -->
+    <style name="Theme.Aero" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Edge-to-edge: Compose applies safeDrawing insets to keep controls below the system bars. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="Theme.Aero.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/aero_icon</item>
+        <item name="postSplashScreenTheme">@style/Theme.Aero</item>
+    </style>
+</resources>

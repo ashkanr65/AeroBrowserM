@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aero</string>
+    <string name="loading_message">Browser App Loading…</string>
+    <item name="webview_state_listener" type="id" />
+    <item name="webview_dnt_script" type="id" />
+    <item name="webview_webrtc_script" type="id" />
+    <item name="webview_private_mode" type="id" />
+    <item name="webview_seek_script" type="id" />
+</resources>
